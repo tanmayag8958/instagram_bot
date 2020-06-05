@@ -9,6 +9,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
+USERNAME = ''
+PASSWORD = ''
+USERNAME_TO_FOLLOW_FOLLOWING = ''
+
 chrome_options = Options()
 chrome_options.add_argument('--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1')
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
@@ -79,10 +83,9 @@ def dont_follow_back(username):
     print(final)
 
 
-# login('_ilustrador_', '@.hesoyam123')
-login('bruised.shot', '@.Hesoyam123')
-# follow('gee.art.x')
-# dont_follow_back('bruised.shot')
+login(USERNAME, PASSWORD)
+dont_follow_back(USERNAME)
+follow(USERNAME_TO_FOLLOW_FOLLOWING)
 time.sleep(5)
 
 
